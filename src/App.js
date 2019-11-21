@@ -1,19 +1,21 @@
 import React, {Component, Fragment} from 'react';
 
+import Ingredients from './components/Ingredients/Ingredients';
+import Salad from './components/Salad/Salad';
+import Meat from './components/Meat/Meat';
+import Cheese from './components/Cheese/Cheese';
+import Bacon from './components/Bacon/Bacon';
+import BreadTop from './components/Bread/BreadTop';
+import BreadBottom from './components/Bread/BreadBottom';
+
 import {GiMeat} from "react-icons/gi";
 import {GiCheeseWedge} from "react-icons/gi";
 import {FaBacon} from "react-icons/fa";
 import {GiLindenLeaf} from "react-icons/gi";
 import {GiTrashCan} from "react-icons/gi";
 
-import Ingredients from './components/Ingredients/Ingredients'
-import Salad from './components/Salad/Salad'
-import Meat from './components/Meat/Meat'
-import Cheese from './components/Cheese/Cheese'
-import Bacon from './components/Bacon/Bacon'
-
 import './App.css';
-import './bootstrap.min.css'
+import './bootstrap.min.css';
 
 const INGR = [
   {name: 'Salad', image: <GiLindenLeaf/>},
@@ -31,7 +33,7 @@ class App extends Component {
       {name: 'Bacon', count: 0, price: 30},
     ],
     price:20,
-  }
+  };
 
   addIngredient = (i) => {
     const ingredients = [...this.state.ingredients];
@@ -39,7 +41,7 @@ class App extends Component {
     let price = this.state.price;
     price+=ingredients[i].price
     this.setState({ingredients,price})
-  }
+  };
 
   removeIngredient = (i) => {
     const ingredients = [...this.state.ingredients];
@@ -49,7 +51,7 @@ class App extends Component {
     price-=ingredients[i].price
     this.setState({ingredients,price})
     }
-  }
+  };
 
   addComponents = () =>{
     let innerIngredients = [];
@@ -71,7 +73,7 @@ class App extends Component {
       }
     })
     return innerIngredients;
-  }
+  };
 
   render = () => (
     <div className="container">
@@ -97,12 +99,9 @@ class App extends Component {
           <h5>Burger</h5>
           <div className="border border-secondary rounded p-2">
             <div className="Burger">
-              <div className="BreadTop">
-                <div className="Seeds1"></div>
-                <div className="Seeds2"></div>
-              </div>
+              <BreadTop/>
                 {this.addComponents().map((element, i)=> (<Fragment key={i}>{element}</Fragment>))}
-              <div className="BreadBottom"></div>
+              <BreadBottom/>
             </div>  
           </div>
         </div>

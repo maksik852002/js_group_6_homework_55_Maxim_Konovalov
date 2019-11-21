@@ -1,10 +1,8 @@
 import React from 'react';
-import './Salad.css'
+import './Salad.css';
 
-const Salad = () => {
-  return (
-    <div className="Salad"></div>
-  )
-}
+const Salad = () => (
+  <div className="Salad"></div>
+)
 
 export default Salad;

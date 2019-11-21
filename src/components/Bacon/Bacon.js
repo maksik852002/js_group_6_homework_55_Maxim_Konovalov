@@ -1,10 +1,8 @@
 import React from 'react';
-import './Bacon.css'
+import './Bacon.css';
 
-const Bacon = () => {
-  return (
-    <div className="Bacon"></div>
-  )
-}
+const Bacon = () => (
+  <div className="Bacon"></div>
+)
 
 export default Bacon;
